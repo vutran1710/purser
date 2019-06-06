@@ -1,7 +1,7 @@
-import { hexSequenceValidator } from '@colony/purser-core/validators';
+import { hexSequenceValidator } from '@vutr/purser-core/validators';
 
-jest.dontMock('@colony/purser-core/utils');
-jest.dontMock('@colony/purser-core/validators');
+jest.dontMock('@vutr/purser-core/utils');
+jest.dontMock('@vutr/purser-core/validators');
 
 describe('`Core` Module', () => {
   describe('`hexSequenceValidator()` validator', () => {

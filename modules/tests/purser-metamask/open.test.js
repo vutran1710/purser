@@ -1,16 +1,13 @@
 import Web3Instance from 'web3';
 
-import { warning } from '@colony/purser-core/utils';
-import metamaskWallet from '@colony/purser-metamask';
-import MetamaskWalletClass from '@colony/purser-metamask/class';
-import {
-  methodCaller,
-  getInpageProvider,
-} from '@colony/purser-metamask/helpers';
+import { warning } from '@vutr/purser-core/utils';
+import metamaskWallet from '@vutr/purser-metamask';
+import MetamaskWalletClass from '@vutr/purser-metamask/class';
+import { methodCaller, getInpageProvider } from '@vutr/purser-metamask/helpers';
 
-jest.dontMock('@colony/purser-metamask');
+jest.dontMock('@vutr/purser-metamask');
 
-jest.mock('@colony/purser-metamask/class');
+jest.mock('@vutr/purser-metamask/class');
 jest.mock('web3');
 
 /*
@@ -24,12 +21,10 @@ const mockedEnableMethod = jest.fn(() => [mockedAddress]);
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-metamask/helpers', () =>
+jest.mock('@vutr/purser-metamask/helpers', () =>
   require('@mocks/purser-metamask/helpers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
 
 describe('Metamask` Wallet Module', () => {
   beforeEach(() => {

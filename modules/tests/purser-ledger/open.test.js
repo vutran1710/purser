@@ -1,30 +1,28 @@
 import {
   derivationPathSerializer,
   userInputValidator,
-} from '@colony/purser-core/helpers';
-import { PATH, NETWORK_IDS } from '@colony/purser-core/defaults';
-import * as utils from '@colony/purser-core/utils';
+} from '@vutr/purser-core/helpers';
+import { PATH, NETWORK_IDS } from '@vutr/purser-core/defaults';
+import * as utils from '@vutr/purser-core/utils';
 
 import {
   ledgerConnection,
   handleLedgerConnectionError,
-} from '@colony/purser-ledger/helpers';
-import ledgerWallet from '@colony/purser-ledger';
-import LedgerWalletClass from '@colony/purser-ledger/class';
+} from '@vutr/purser-ledger/helpers';
+import ledgerWallet from '@vutr/purser-ledger';
+import LedgerWalletClass from '@vutr/purser-ledger/class';
 
-jest.mock('@colony/purser-ledger/class');
+jest.mock('@vutr/purser-ledger/class');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
-jest.mock('@colony/purser-ledger/helpers', () =>
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
+jest.mock('@vutr/purser-ledger/helpers', () =>
   require('@mocks/purser-ledger/helpers'),
 );
 

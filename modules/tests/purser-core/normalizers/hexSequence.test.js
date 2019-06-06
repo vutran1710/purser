@@ -1,7 +1,7 @@
-import { hexSequenceNormalizer } from '@colony/purser-core/normalizers';
+import { hexSequenceNormalizer } from '@vutr/purser-core/normalizers';
 
-jest.dontMock('@colony/purser-core/utils');
-jest.dontMock('@colony/purser-core/normalizers');
+jest.dontMock('@vutr/purser-core/utils');
+jest.dontMock('@vutr/purser-core/normalizers');
 
 const unPrefixedHexString = 'ead7de0ec184a6c8a';
 const prefixedHexString = '0xead7de0ec184a6c8a';

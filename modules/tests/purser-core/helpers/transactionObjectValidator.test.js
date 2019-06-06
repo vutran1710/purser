@@ -1,23 +1,23 @@
-import { transactionObjectValidator } from '@colony/purser-core/helpers';
+import { transactionObjectValidator } from '@vutr/purser-core/helpers';
 import {
   bigNumberValidator,
   safeIntegerValidator,
   addressValidator,
   hexSequenceValidator,
-} from '@colony/purser-core/validators';
-import { bigNumber } from '@colony/purser-core/utils';
+} from '@vutr/purser-core/validators';
+import { bigNumber } from '@vutr/purser-core/utils';
 
-import { TRANSACTION } from '@colony/purser-core/defaults';
+import { TRANSACTION } from '@vutr/purser-core/defaults';
 
-jest.dontMock('@colony/purser-core/helpers');
+jest.dontMock('@vutr/purser-core/helpers');
 
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-core/validators');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/utils', () =>
+jest.mock('@vutr/purser-core/utils', () =>
   require('@mocks/purser-core/utils.js'),
 );
 

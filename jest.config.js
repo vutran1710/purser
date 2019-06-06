@@ -9,7 +9,7 @@ module.exports = {
     '!<rootDir>/modules/node_modules',
   ],
   moduleNameMapper: {
-    '^@mocks/(.*)$': '<rootDir>/modules/tests/mocks/@colony/$1',
+    '^@mocks/(.*)$': '<rootDir>/modules/tests/mocks/@vutr/$1',
     '^ethers/wallet$': '<rootDir>/modules/tests/mocks/ethers/wallet/index.js',
     '^ethers/utils$': '<rootDir>/modules/tests/mocks/ethers/utils/index.js',
     '^ethers/utils/secret-storage$': '<rootDir>/modules/tests/mocks/ethers/utils/secret-storage.js',

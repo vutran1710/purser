@@ -25,7 +25,7 @@ yarn add @colony/purser-core
 
 #### Usage
 ```js
-import { bigNumber } from '@colony/purser-core/utils'
+import { bigNumber } from '@vutr/purser-core/utils'
 
 const value = bigNumber('0.00000001').toWei();
 
@@ -43,7 +43,7 @@ yarn add @colony/purser-ledger
 
 #### Usage
 ```js
-import { open } from '@colony/purser-ledger'
+import { open } from '@vutr/purser-ledger'
 
 const wallet = await open();
 
@@ -63,7 +63,7 @@ yarn add @colony/purser-metamask
 
 ### Usage
 ```js
-import { open } from '@colony/purser-metamask'
+import { open } from '@vutr/purser-metamask'
 
 const wallet = await open();
 
@@ -81,7 +81,7 @@ yarn add @colony/purser-software
 
 #### Usage
 ```js
-import { open } from '@colony/purser-software'
+import { open } from '@vutr/purser-software'
 
 const wallet = await open({ mnemonic: '...' });
 
@@ -99,7 +99,7 @@ yarn add @colony/purser-trezor
 
 #### Usage
 ```js
-import { open } from '@colony/purser-trezor'
+import { open } from '@vutr/purser-trezor'
 
 const wallet = await open();
 

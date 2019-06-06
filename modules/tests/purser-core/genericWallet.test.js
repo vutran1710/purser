@@ -1,29 +1,29 @@
 import HDKey from 'hdkey';
 import { computeAddress } from 'ethers/utils';
 
-import GenericWallet from '@colony/purser-core/genericWallet';
+import GenericWallet from '@vutr/purser-core/genericWallet';
 import {
   safeIntegerValidator,
   hexSequenceValidator,
   addressValidator,
-} from '@colony/purser-core/validators';
+} from '@vutr/purser-core/validators';
 import {
   addressNormalizer,
   hexSequenceNormalizer,
-} from '@colony/purser-core/normalizers';
-import { NETWORK_IDS } from '@colony/purser-core/defaults';
+} from '@vutr/purser-core/normalizers';
+import { NETWORK_IDS } from '@vutr/purser-core/defaults';
 
-jest.dontMock('@colony/purser-core/genericWallet');
+jest.dontMock('@vutr/purser-core/genericWallet');
 
 jest.mock('hdkey');
 jest.mock('ethers/utils');
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-core/validators');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers.js'),
 );
 

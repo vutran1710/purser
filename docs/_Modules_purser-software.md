@@ -1,5 +1,5 @@
 ---
-title: '@colony/purser-software'
+title: '@vutr/purser-software'
 section: Modules
 order: 3
 ---
@@ -27,16 +27,16 @@ There are different ways in which you can import the library in your project _(a
 
 Using `ES5` `require()` statements:
 ```js
-var software = require('@colony/purser-software'); // software.create().then();
+var software = require('@vutr/purser-software'); // software.create().then();
 
-var create = require('@colony/purser-software').create; // create().then();
+var create = require('@vutr/purser-software').create; // create().then();
 ```
 
 Using `ES6` `import` statements:
 ```js
-import software from '@colony/purser-software'; // await software.create();
+import software from '@vutr/purser-software'; // await software.create();
 
-import { create } from '@colony/purser-software'; // await create();
+import { create } from '@vutr/purser-software'; // await create();
 ```
 
 ## Methods
@@ -81,22 +81,22 @@ Defaults to `id` `1`: `homestead`.
 
 Create a new wallet:
 ```js
-import { create } from '@colony/purser-software';
+import { create } from '@vutr/purser-software';
 
 const newWallet = await create();
 ```
 
 Create a new wallet with manual entropy:
 ```js
-import { create } from '@colony/purser-software';
-import { getRandomValues } from '@colony/purser-software/utils';
+import { create } from '@vutr/purser-software';
+import { getRandomValues } from '@vutr/purser-software/utils';
 
 const newWallet = await create({ entropy: getRandomValues(new Uint8Array(65536)) });
 ```
 
 Create a new wallet and set the encryption password:
 ```js
-import { create } from '@colony/purser-software';
+import { create } from '@vutr/purser-software';
 
 const newWallet = await create({ password: '0fbfd56c94dc9d2578a6' });
 
@@ -105,7 +105,7 @@ const newWalletKeystore = await newWallet.keystore;
 
 Create a new wallet and set a different network id
 ```js
-import { create } from '@colony/purser-software';
+import { create } from '@vutr/purser-software';
 
 const newWallet = await create({ chainId: 3 }); // ropsten
 
@@ -180,7 +180,7 @@ Defaults to `id` `1`: `homestead`.
 
 Open a wallet using a private key:
 ```js
-import { open } from '@colony/purser-software';
+import { open } from '@vutr/purser-software';
 
 const privateKey = '0x9274...f447';
 
@@ -189,7 +189,7 @@ const existingWallet = await open({ privateKey });
 
 Open a wallet using a mnemonic phrase:
 ```js
-import { open } from '@colony/purser-software';
+import { open } from '@vutr/purser-software';
 
 const mnemonic = 'load blush spray dirt random cash pear illness pulse sketch sheriff surge';
 
@@ -198,7 +198,7 @@ const existingWallet = await open({ mnemonic });
 
 Open a new wallet using an encrypted keystore:
 ```js
-import { open } from '@colony/purser-software';
+import { open } from '@vutr/purser-software';
 
 const keystore = '{"address":"3953cf4ea75a62c6fcd0b3988b1984265006a4cc","id":"55df8726-b08d-41ce-b9a0-8cb7d4cb7254","version":3,"Crypto":{"cipher":"aes-128-ctr","cipherparams":{"iv":"919afe213cbac6704362f8139a0a3519"},"ciphertext":"d823708436d306b7bc8caf2f8bedf93e86f28c1edbb2bc89bae8e9ad78971682","kdf":"scrypt","kdfparams":{"salt":"0be48e9efbeb26be2e7f68cfc61d1e83c34dd9406cfec3c77e71e637dd01a51b","n":131072,"dklen":32,"p":1,"r":8},"mac":"c9b6cd3173daf1ea6633b2d2848ab96765340bb27a07a203ecf17454c568cc3e"}}';
 
@@ -210,7 +210,7 @@ const existingWallet = await open({
 
 Open a new wallet and set a different network id:
 ```js
-import { open } from '@colony/purser-software';
+import { open } from '@vutr/purser-software';
 
 const existingWallet = await open({
   privateKey: '0x9274...f447',

@@ -1,5 +1,5 @@
 ---
-title: '@colony/purser-core'
+title: '@vutr/purser-core'
 section: Modules
 order: 0
 ---
@@ -22,12 +22,12 @@ There are different ways in which you can import the library in your project _(a
 
 Using `ES5` `require()` statements:
 ```js
-var utils = require('@colony/purser-core').utils; // utils.getRandomValues();
+var utils = require('@vutr/purser-core').utils; // utils.getRandomValues();
 ```
 
 Using `ES6` `import` statements:
 ```js
-import { utils } from '@colony/purser-core'; // utils.getRandomValues();
+import { utils } from '@vutr/purser-core'; // utils.getRandomValues();
 ```
 
 ## Methods
@@ -52,8 +52,8 @@ This method will `return` an extended instance of `bn.js` _(already instantiated
 
 This method is used to work with number values throughout the library:
 ```js
-import { open } from '@colony/purser-trezor';
-import { bigNumber } from '@colony/purser-core/utils';
+import { open } from '@vutr/purser-trezor';
+import { bigNumber } from '@vutr/purser-core/utils';
 
 const gasPrice = bigNumber('0.00000001').toWei(); // { negative: 0, words: Array(4), length: 4, red: null }
 
@@ -78,8 +78,8 @@ It checks for both implementations _(`webkit` or `ms`)_, and if it can't find an
 This method is used to provide randomness when creating a new wallet:
 ```js
 
-import { create } from '@colony/purser-software';
-import { getRandomValues } from '@colony/purser-core/utils';
+import { create } from '@vutr/purser-software';
+import { getRandomValues } from '@vutr/purser-core/utils';
 
 // a bigger array is better, up to a max. of 65536 (the limit of the 8 bit unsigned array)
 

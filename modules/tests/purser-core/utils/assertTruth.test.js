@@ -1,7 +1,7 @@
-import { assertTruth } from '@colony/purser-core/utils';
-import * as defaults from '@colony/purser-core/defaults';
+import { assertTruth } from '@vutr/purser-core/utils';
+import * as defaults from '@vutr/purser-core/defaults';
 
-jest.dontMock('@colony/purser-core/utils');
+jest.dontMock('@vutr/purser-core/utils');
 
 global.console = {
   warn: jest.fn(),

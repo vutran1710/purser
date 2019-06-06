@@ -1,5 +1,5 @@
 ---
-title: '@colony/purser-ledger'
+title: '@vutr/purser-ledger'
 section: Modules
 order: 1
 ---
@@ -46,16 +46,16 @@ There are different ways in which you can import the library in your project _(a
 
 Using `ES5` `require()` statements:
 ```js
-var ledger = require('@colony/purser-ledger'); // ledger.open().then();
+var ledger = require('@vutr/purser-ledger'); // ledger.open().then();
 
-var open = require('@colony/purser-ledger/ledger').open; // open().then();
+var open = require('@vutr/purser-ledger/ledger').open; // open().then();
 ```
 
 Using `ES6` `import` statements:
 ```js
-import ledger from '@colony/purser-ledger'; // await ledger.open();
+import ledger from '@vutr/purser-ledger'; // await ledger.open();
 
-import { open } from '@colony/purser-ledger'; // await open();
+import { open } from '@vutr/purser-ledger'; // await open();
 ```
 
 ## Methods
@@ -98,14 +98,14 @@ Defaults to `id` `1`: `homestead`.
 
 Open the Ledger wallet using the default number of addresses:
 ```js
-import { open } from '@colony/purser-ledger';
+import { open } from '@vutr/purser-ledger';
 
 const wallet = await open();
 ```
 
 Open the Ledger wallet using a custom number of addresses:
 ```js
-import { open } from '@colony/purser-ledger';
+import { open } from '@vutr/purser-ledger';
 
 const wallet = await open({ addressCount: 100 });
 
@@ -116,7 +116,7 @@ await wallet.setDefaultAddress(12); //true
 
 Open the Ledger wallet using a different chain id:
 ```js
-import { open } from '@colony/purser-ledger';
+import { open } from '@vutr/purser-ledger';
 
 const wallet = await open({ chainId: 3 }); // ropsten
 

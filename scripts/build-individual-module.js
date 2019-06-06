@@ -57,7 +57,7 @@ const buildIndividualModule = async (moduleName) => {
     cjsBuildFolder,
     `Building ${chalk.green(
       'CommonJS Module'
-    )} for ${chalk.white('@colony/')}${chalk.whiteBright.bold(
+    )} for ${chalk.white('@vutr/')}${chalk.whiteBright.bold(
       moduleName
     )}${chalk.white(' @ ')}${chalk.white.bold(
       packageFile.version
@@ -71,7 +71,7 @@ const buildIndividualModule = async (moduleName) => {
     esBuildFolder,
     `Building ${chalk.green(
       'ES Module'
-    )} for ${chalk.white('@colony/')}${chalk.whiteBright.bold(
+    )} for ${chalk.white('@vutr/')}${chalk.whiteBright.bold(
       moduleName
     )}${chalk.white(' @ ')}${chalk.white.bold(
       packageFile.version
@@ -85,7 +85,7 @@ const buildIndividualModule = async (moduleName) => {
     esBuildFolder,
     `Exporting ${chalk.green(
       'Flow Types'
-    )} for ${chalk.white('@colony/')}${chalk.whiteBright.bold(
+    )} for ${chalk.white('@vutr/')}${chalk.whiteBright.bold(
       moduleName
     )}${chalk.white(' @ ')}${chalk.white.bold(
       packageFile.version

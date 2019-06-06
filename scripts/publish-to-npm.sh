@@ -12,7 +12,7 @@ npm adduser
 
 # Paths
 ROOT_PATH=$(pwd)
-MODULES_PATH="${ROOT_PATH}/modules/node_modules/@colony"
+MODULES_PATH="${ROOT_PATH}/modules/node_modules/@vutr"
 NODE_MODULES_PATH="${ROOT_PATH}/node_modules"
 
 # Git

@@ -3,31 +3,29 @@ import { fromString } from 'bip32-path';
 import {
   derivationPathSerializer,
   userInputValidator,
-} from '@colony/purser-core/helpers';
-import { PATH, NETWORK_IDS } from '@colony/purser-core/defaults';
+} from '@vutr/purser-core/helpers';
+import { PATH, NETWORK_IDS } from '@vutr/purser-core/defaults';
 
-import * as utils from '@colony/purser-core/utils';
+import * as utils from '@vutr/purser-core/utils';
 
-import trezorWallet from '@colony/purser-trezor';
-import TrezorWalletClass from '@colony/purser-trezor/class';
-import { payloadListener } from '@colony/purser-trezor/helpers';
-import { PAYLOAD_XPUB } from '@colony/purser-trezor/payloads';
-import { STD_ERRORS } from '@colony/purser-trezor/defaults';
+import trezorWallet from '@vutr/purser-trezor';
+import TrezorWalletClass from '@vutr/purser-trezor/class';
+import { payloadListener } from '@vutr/purser-trezor/helpers';
+import { PAYLOAD_XPUB } from '@vutr/purser-trezor/payloads';
+import { STD_ERRORS } from '@vutr/purser-trezor/defaults';
 
 jest.mock('bip32-path');
-jest.mock('@colony/purser-trezor/class');
+jest.mock('@vutr/purser-trezor/class');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
-jest.mock('@colony/purser-trezor/helpers', () =>
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
+jest.mock('@vutr/purser-trezor/helpers', () =>
   require('@mocks/purser-trezor/helpers'),
 );
 

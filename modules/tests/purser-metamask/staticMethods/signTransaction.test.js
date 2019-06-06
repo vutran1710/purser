@@ -1,40 +1,38 @@
 import EthereumTx from 'ethereumjs-tx';
 
-import { transactionObjectValidator } from '@colony/purser-core/helpers';
-import { warning } from '@colony/purser-core/utils';
+import { transactionObjectValidator } from '@vutr/purser-core/helpers';
+import { warning } from '@vutr/purser-core/utils';
 
-import { signTransaction } from '@colony/purser-metamask/staticMethods';
-import { methodCaller } from '@colony/purser-metamask/helpers';
+import { signTransaction } from '@vutr/purser-metamask/staticMethods';
+import { methodCaller } from '@vutr/purser-metamask/helpers';
 import {
   addressNormalizer,
   hexSequenceNormalizer,
-} from '@colony/purser-core/normalizers';
+} from '@vutr/purser-core/normalizers';
 import {
   addressValidator,
   safeIntegerValidator,
   hexSequenceValidator,
-} from '@colony/purser-core/validators';
+} from '@vutr/purser-core/validators';
 
-import { STD_ERRORS } from '@colony/purser-metamask/defaults';
+import { STD_ERRORS } from '@vutr/purser-metamask/defaults';
 
-jest.dontMock('@colony/purser-metamask/staticMethods');
+jest.dontMock('@vutr/purser-metamask/staticMethods');
 
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-core/validators');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
-jest.mock('@colony/purser-metamask/helpers', () =>
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
+jest.mock('@vutr/purser-metamask/helpers', () =>
   require('@mocks/purser-metamask/helpers'),
 );
 

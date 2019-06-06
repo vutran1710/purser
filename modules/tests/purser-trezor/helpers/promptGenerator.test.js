@@ -1,6 +1,6 @@
-import { promptGenerator } from '@colony/purser-trezor/helpers';
+import { promptGenerator } from '@vutr/purser-trezor/helpers';
 
-jest.dontMock('@colony/purser-trezor/helpers');
+jest.dontMock('@vutr/purser-trezor/helpers');
 
 /*
  * We need to mock the `window`'s `open()` global method

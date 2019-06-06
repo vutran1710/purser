@@ -2,10 +2,10 @@ import { Wallet as EthersWalletClass } from 'ethers/wallet';
 import { isValidMnemonic, fromMnemonic } from 'ethers/utils/hdnode';
 import { isSecretStorageWallet } from 'ethers/utils/json-wallet';
 
-import { userInputValidator } from '@colony/purser-core/helpers';
+import { userInputValidator } from '@vutr/purser-core/helpers';
 
-import SoftwareWalletClass from '@colony/purser-software/class';
-import softwareWallet from '@colony/purser-software';
+import SoftwareWalletClass from '@vutr/purser-software/class';
+import softwareWallet from '@vutr/purser-software';
 
 import {
   /*
@@ -13,25 +13,23 @@ import {
    * So we have to trick it again with a comment :)
    */
   REQUIRED_PROPS as REQUIRED_PROPS_SOFTWARE,
-} from '@colony/purser-software/defaults';
+} from '@vutr/purser-software/defaults';
 
-jest.dontMock('@colony/purser-software/index');
+jest.dontMock('@vutr/purser-software/index');
 
 jest.mock('ethers/wallet');
 jest.mock('ethers/utils/hdnode');
 jest.mock('ethers/utils/json-wallet');
-jest.mock('@colony/purser-software/class');
+jest.mock('@vutr/purser-software/class');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
 
 /*
  * These values are not correct. Do not use the as reference.

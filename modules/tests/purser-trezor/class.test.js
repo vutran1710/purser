@@ -1,34 +1,32 @@
-import { userInputValidator } from '@colony/purser-core/helpers';
-import TrezorWalletClass from '@colony/purser-trezor/class';
+import { userInputValidator } from '@vutr/purser-core/helpers';
+import TrezorWalletClass from '@vutr/purser-trezor/class';
 import {
   signTransaction,
   signMessage,
   verifyMessage,
-} from '@colony/purser-trezor/staticMethods';
-import { warning } from '@colony/purser-core/utils';
+} from '@vutr/purser-trezor/staticMethods';
+import { warning } from '@vutr/purser-core/utils';
 
-import { REQUIRED_PROPS } from '@colony/purser-core/defaults';
-import { REQUIRED_PROPS as REQUIRED_TREZOR_PROPS } from '@colony/purser-trezor/defaults';
-import { TYPE_HARDWARE, SUBTYPE_TREZOR } from '@colony/purser-core/types';
+import { REQUIRED_PROPS } from '@vutr/purser-core/defaults';
+import { REQUIRED_PROPS as REQUIRED_TREZOR_PROPS } from '@vutr/purser-trezor/defaults';
+import { TYPE_HARDWARE, SUBTYPE_TREZOR } from '@vutr/purser-core/types';
 
-jest.dontMock('@colony/purser-trezor/class');
+jest.dontMock('@vutr/purser-trezor/class');
 
-jest.mock('@colony/purser-trezor/staticMethods');
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-trezor/staticMethods');
+jest.mock('@vutr/purser-core/validators');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
 
 /*
  * These values are not correct. Do not use the as reference.

@@ -1,16 +1,16 @@
 import U2fTransport from '@ledgerhq/hw-transport-u2f';
 
-import { handleLedgerConnectionError } from '@colony/purser-ledger/helpers';
-import { transportErrors as messages } from '@colony/purser-ledger/messages';
-import { U2F_TRANSPORT_ERROR } from '@colony/purser-ledger/defaults';
+import { handleLedgerConnectionError } from '@vutr/purser-ledger/helpers';
+import { transportErrors as messages } from '@vutr/purser-ledger/messages';
+import { U2F_TRANSPORT_ERROR } from '@vutr/purser-ledger/defaults';
 
-jest.dontMock('@colony/purser-ledger/helpers');
+jest.dontMock('@vutr/purser-ledger/helpers');
 
 jest.mock('@ledgerhq/hw-transport-u2f');
 /*
  * We're manually mocking the messages export, so we can test agains the messages
  */
-jest.mock('@colony/purser-ledger/messages', () => ({
+jest.mock('@vutr/purser-ledger/messages', () => ({
   /*
    * For some reason Jest dones't like us importing variables (out of scope),
    * even if we prepend the name with `mock`.

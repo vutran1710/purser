@@ -47,7 +47,7 @@ yarn add @colony/purser-software
 Create a new wallet
 
 ```js
-import { create } from '@colony/purser-software'
+import { create } from '@vutr/purser-software'
 
 const wallet = await create();
 
@@ -57,7 +57,7 @@ console.log(wallet); // { address: '...', privateKey: '...', publicKey: '...' }
 or open an existing one (based on the mnemnonic)
 
 ```js
-import { open } from '@colony/purser-software'
+import { open } from '@vutr/purser-software'
 
 const wallet = await open({ mnemonic: '...' });
 
@@ -77,7 +77,7 @@ yarn add @colony/purser-trezor
 #### Usage
 
 ```js
-import { open } from '@colony/purser-trezor'
+import { open } from '@vutr/purser-trezor'
 
 const wallet = await open();
 

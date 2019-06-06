@@ -1,5 +1,5 @@
 ---
-title: '@colony/purser-metamask'
+title: '@vutr/purser-metamask'
 section: Modules
 order: 2
 ---
@@ -44,16 +44,16 @@ There are different ways in which you can import the library in your project _(a
 
 Using `ES5` `require()` statements:
 ```js
-var metamask = require('@colony/purser-metamask'); // metamask.open().then();
+var metamask = require('@vutr/purser-metamask'); // metamask.open().then();
 
-var open = require('@colony/purser-metamask').open; // open().then();
+var open = require('@vutr/purser-metamask').open; // open().then();
 ```
 
 Using `ES6` `import` statements:
 ```js
-import metamask from '@colony/purser-metamask'; // await metamask.open();
+import metamask from '@vutr/purser-metamask'; // await metamask.open();
 
-import { open } from '@colony/purser-metamask'; // await open();
+import { open } from '@vutr/purser-metamask'; // await open();
 ```
 
 ## Methods
@@ -76,7 +76,7 @@ _If Metamask is not unlocked it cannot access the address, so an Error will be t
 
 Open the metamask wallet:
 ```js
-import { open } from '@colony/purser-metamask';
+import { open } from '@vutr/purser-metamask';
 
 const wallet = await open();
 ```
@@ -95,7 +95,7 @@ This method returns a `Promise` which, after resolving, it will `return` only re
 
 Detect if Metamask is available:
 ```js
-import { detect as isMetamaskAvailable } from '@colony/purser-metamask';
+import { detect as isMetamaskAvailable } from '@vutr/purser-metamask';
 
 await isMetamaskAvailable(); // true
 ```
@@ -122,7 +122,7 @@ _Opening Metamaks's UI counts as a State Event Change, so your callback will be 
 
 Hook into the state change events with a simple callback:
 ```js
-import { accountChangeHook } from '@colony/purser-metamask';
+import { accountChangeHook } from '@vutr/purser-metamask';
 
 const walletChangedCallback = (state) => {
   console.log(`The State Change Event triggered!`, state);
@@ -133,7 +133,7 @@ await accountChangeHook(walletChangedCallback);
 
 Hook into the state change events with filtering:
 ```js
-import { open, accountChangeHook } from '@colony/purser-metamask';
+import { open, accountChangeHook } from '@vutr/purser-metamask';
 
 const metamaskInstance = await open();
 let addressState = metamaskInstance.address;

@@ -14,7 +14,7 @@ const update = async () => {
     console.log(
       `Updating release ${chalk.green(
         'package.json'
-      )} for ${chalk.white('@colony/')}${chalk.whiteBright.bold(
+      )} for ${chalk.white('@vutr/')}${chalk.whiteBright.bold(
         moduleName
       )}`,
     );

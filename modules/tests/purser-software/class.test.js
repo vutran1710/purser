@@ -1,44 +1,42 @@
 import { privateToPublic } from 'ethereumjs-util';
 import { encrypt } from 'ethers/utils/secret-storage';
 
-import { userInputValidator } from '@colony/purser-core/helpers';
-import { warning } from '@colony/purser-core/utils';
+import { userInputValidator } from '@vutr/purser-core/helpers';
+import { warning } from '@vutr/purser-core/utils';
 import {
   addressValidator,
   hexSequenceValidator,
-} from '@colony/purser-core/validators';
-import { hexSequenceNormalizer } from '@colony/purser-core/normalizers';
+} from '@vutr/purser-core/validators';
+import { hexSequenceNormalizer } from '@vutr/purser-core/normalizers';
 
-import SoftwareWallet from '@colony/purser-software/class';
+import SoftwareWallet from '@vutr/purser-software/class';
 import {
   signTransaction,
   signMessage,
   verifyMessage,
-} from '@colony/purser-software/staticMethods';
+} from '@vutr/purser-software/staticMethods';
 
-import { REQUIRED_PROPS } from '@colony/purser-core/defaults';
-import { TYPE_SOFTWARE, SUBTYPE_ETHERS } from '@colony/purser-core/types';
+import { REQUIRED_PROPS } from '@vutr/purser-core/defaults';
+import { TYPE_SOFTWARE, SUBTYPE_ETHERS } from '@vutr/purser-core/types';
 
-jest.dontMock('@colony/purser-software/class');
+jest.dontMock('@vutr/purser-software/class');
 
 jest.mock('ethereumjs-util');
 jest.mock('ethers/utils');
-jest.mock('@colony/purser-core/validators');
-jest.mock('@colony/purser-software/staticMethods');
+jest.mock('@vutr/purser-core/validators');
+jest.mock('@vutr/purser-software/staticMethods');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
 
 /*
  * These values are not correct. Do not use the as reference.

@@ -1,10 +1,10 @@
 import BN from 'bn.js';
 
-import { bigNumber } from '@colony/purser-core/utils';
-import * as defaults from '@colony/purser-core/defaults';
+import { bigNumber } from '@vutr/purser-core/utils';
+import * as defaults from '@vutr/purser-core/defaults';
 
 jest.dontMock('bn.js');
-jest.dontMock('@colony/purser-core/utils');
+jest.dontMock('@vutr/purser-core/utils');
 
 describe('`Core` Module', () => {
   describe('`bigNumber()` util', () => {

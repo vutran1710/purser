@@ -1,15 +1,15 @@
-import { validateMetamaskState } from '@colony/purser-metamask/validators';
+import { validateMetamaskState } from '@vutr/purser-metamask/validators';
 
-import { validators as messages } from '@colony/purser-metamask/messages';
+import { validators as messages } from '@vutr/purser-metamask/messages';
 
-jest.dontMock('@colony/purser-metamask/validators');
+jest.dontMock('@vutr/purser-metamask/validators');
 
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-metamask/helpers', () =>
+jest.mock('@vutr/purser-metamask/helpers', () =>
   require('@mocks/purser-metamask/helpers'),
 );
 

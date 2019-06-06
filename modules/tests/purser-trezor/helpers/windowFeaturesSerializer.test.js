@@ -1,6 +1,6 @@
-import { windowFeaturesSerializer } from '@colony/purser-trezor/helpers';
+import { windowFeaturesSerializer } from '@vutr/purser-trezor/helpers';
 
-jest.dontMock('@colony/purser-trezor/helpers');
+jest.dontMock('@vutr/purser-trezor/helpers');
 
 const testFeaturesObject = {
   stringFeature: 'string',

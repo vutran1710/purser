@@ -1,10 +1,10 @@
-import { messageValidator } from '@colony/purser-core/validators';
+import { messageValidator } from '@vutr/purser-core/validators';
 
-import { sanitizeUrl } from '@colony/purser-trezor/helpers';
+import { sanitizeUrl } from '@vutr/purser-trezor/helpers';
 
-jest.dontMock('@colony/purser-trezor/helpers');
+jest.dontMock('@vutr/purser-trezor/helpers');
 
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-core/validators');
 
 const testUrl = 'http://some-url-location.com';
 const malformedTestUrl = 'some-url-location.com';

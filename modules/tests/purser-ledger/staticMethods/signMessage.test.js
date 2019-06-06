@@ -1,38 +1,38 @@
-import * as utils from '@colony/purser-core/utils';
+import * as utils from '@vutr/purser-core/utils';
 import {
   derivationPathNormalizer,
   hexSequenceNormalizer,
-} from '@colony/purser-core/normalizers';
+} from '@vutr/purser-core/normalizers';
 import {
   derivationPathValidator,
   messageValidator,
-} from '@colony/purser-core/validators';
-import { messageOrDataValidator } from '@colony/purser-core/helpers';
+} from '@vutr/purser-core/validators';
+import { messageOrDataValidator } from '@vutr/purser-core/helpers';
 
-import { signMessage } from '@colony/purser-ledger/staticMethods';
+import { signMessage } from '@vutr/purser-ledger/staticMethods';
 import {
   ledgerConnection,
   handleLedgerConnectionError,
-} from '@colony/purser-ledger/helpers';
+} from '@vutr/purser-ledger/helpers';
 
-jest.dontMock('@colony/purser-ledger/staticMethods');
+jest.dontMock('@vutr/purser-ledger/staticMethods');
 
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-core/validators');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/utils', () =>
+jest.mock('@vutr/purser-core/utils', () =>
   require('@mocks/purser-core/utils.js'),
 );
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers.js'),
 );
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers.js'),
 );
-jest.mock('@colony/purser-ledger/helpers', () =>
+jest.mock('@vutr/purser-ledger/helpers', () =>
   require('@mocks/purser-ledger/helpers.js'),
 );
 

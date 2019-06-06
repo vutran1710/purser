@@ -1,8 +1,8 @@
-import { recoveryParamNormalizer } from '@colony/purser-core/normalizers';
+import { recoveryParamNormalizer } from '@vutr/purser-core/normalizers';
 
-import { SIGNATURE } from '@colony/purser-core/defaults';
+import { SIGNATURE } from '@vutr/purser-core/defaults';
 
-jest.dontMock('@colony/purser-core/normalizers');
+jest.dontMock('@vutr/purser-core/normalizers');
 
 describe('`Core` Module', () => {
   describe('`recoveryParamNormalizer()` normalizer', () => {

@@ -1,17 +1,17 @@
-import metamaskWallet from '@colony/purser-metamask';
+import metamaskWallet from '@vutr/purser-metamask';
 import {
   detect as detectHelper,
   setStateEventObserver,
-} from '@colony/purser-metamask/helpers';
+} from '@vutr/purser-metamask/helpers';
 
-jest.dontMock('@colony/purser-metamask');
+jest.dontMock('@vutr/purser-metamask');
 
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-metamask/helpers', () =>
+jest.mock('@vutr/purser-metamask/helpers', () =>
   require('@mocks/purser-metamask/helpers'),
 );
 

@@ -1,16 +1,16 @@
 import isEqual from 'lodash.isequal';
 
-import { warning } from '@colony/purser-core/utils';
-import { hexSequenceNormalizer } from '@colony/purser-core/normalizers';
-import { hexSequenceValidator } from '@colony/purser-core/validators';
+import { warning } from '@vutr/purser-core/utils';
+import { hexSequenceNormalizer } from '@vutr/purser-core/normalizers';
+import { hexSequenceValidator } from '@vutr/purser-core/validators';
 import {
   recoverPublicKey as recoverPublicKeyHelper,
   userInputValidator,
-} from '@colony/purser-core/helpers';
-import { TYPE_SOFTWARE, SUBTYPE_METAMASK } from '@colony/purser-core/types';
-import { HEX_HASH_TYPE, REQUIRED_PROPS } from '@colony/purser-core/defaults';
+} from '@vutr/purser-core/helpers';
+import { TYPE_SOFTWARE, SUBTYPE_METAMASK } from '@vutr/purser-core/types';
+import { HEX_HASH_TYPE, REQUIRED_PROPS } from '@vutr/purser-core/defaults';
 
-import MetamaskWalletClass from '@colony/purser-metamask/class';
+import MetamaskWalletClass from '@vutr/purser-metamask/class';
 import {
   methodCaller,
   getInpageProvider,
@@ -21,41 +21,39 @@ import {
    */
   /* eslint-disable-next-line import/named */
   triggerUpdateStateEvents,
-} from '@colony/purser-metamask/helpers';
-import { validateMetamaskState } from '@colony/purser-metamask/validators';
+} from '@vutr/purser-metamask/helpers';
+import { validateMetamaskState } from '@vutr/purser-metamask/validators';
 import {
   signTransaction,
   signMessage,
   verifyMessage,
-} from '@colony/purser-metamask/staticMethods';
+} from '@vutr/purser-metamask/staticMethods';
 import {
   PUBLICKEY_RECOVERY_MESSAGE,
   STD_ERRORS,
-} from '@colony/purser-metamask/defaults';
+} from '@vutr/purser-metamask/defaults';
 
-jest.dontMock('@colony/purser-metamask/class');
+jest.dontMock('@vutr/purser-metamask/class');
 
 jest.mock('lodash.isequal');
-jest.mock('@colony/purser-core/validators');
-jest.mock('@colony/purser-metamask/staticMethods');
+jest.mock('@vutr/purser-core/validators');
+jest.mock('@vutr/purser-metamask/staticMethods');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
-jest.mock('@colony/purser-metamask/helpers', () =>
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
+jest.mock('@vutr/purser-metamask/helpers', () =>
   require('@mocks/purser-metamask/helpers'),
 );
-jest.mock('@colony/purser-metamask/validators', () =>
+jest.mock('@vutr/purser-metamask/validators', () =>
   require('@mocks/purser-metamask/validators'),
 );
 

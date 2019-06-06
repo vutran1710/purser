@@ -1,42 +1,42 @@
 import EthereumTx from 'ethereumjs-tx';
 
-import { transactionObjectValidator } from '@colony/purser-core/helpers';
-import * as utils from '@colony/purser-core/utils';
+import { transactionObjectValidator } from '@vutr/purser-core/helpers';
+import * as utils from '@vutr/purser-core/utils';
 
-import { signTransaction } from '@colony/purser-ledger/staticMethods';
+import { signTransaction } from '@vutr/purser-ledger/staticMethods';
 import {
   ledgerConnection,
   handleLedgerConnectionError,
-} from '@colony/purser-ledger/helpers';
+} from '@vutr/purser-ledger/helpers';
 import {
   derivationPathNormalizer,
   multipleOfTwoHexValueNormalizer,
   addressNormalizer,
   hexSequenceNormalizer,
-} from '@colony/purser-core/normalizers';
-import { derivationPathValidator } from '@colony/purser-core/validators';
+} from '@vutr/purser-core/normalizers';
+import { derivationPathValidator } from '@vutr/purser-core/validators';
 
-import { SIGNATURE } from '@colony/purser-core/defaults';
+import { SIGNATURE } from '@vutr/purser-core/defaults';
 
-jest.dontMock('@colony/purser-ledger/staticMethods');
+jest.dontMock('@vutr/purser-ledger/staticMethods');
 
 jest.mock('ethereumjs-tx');
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-core/validators');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/utils', () =>
+jest.mock('@vutr/purser-core/utils', () =>
   require('@mocks/purser-core/utils.js'),
 );
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers.js'),
 );
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers.js'),
 );
-jest.mock('@colony/purser-ledger/helpers', () =>
+jest.mock('@vutr/purser-ledger/helpers', () =>
   require('@mocks/purser-ledger/helpers.js'),
 );
 

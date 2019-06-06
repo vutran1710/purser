@@ -1,38 +1,36 @@
 import {
   derivationPathNormalizer,
   hexSequenceNormalizer,
-} from '@colony/purser-core/normalizers';
+} from '@vutr/purser-core/normalizers';
 import {
   derivationPathValidator,
   messageValidator,
-} from '@colony/purser-core/validators';
-import { warning } from '@colony/purser-core/utils';
-import { messageOrDataValidator } from '@colony/purser-core/helpers';
+} from '@vutr/purser-core/validators';
+import { warning } from '@vutr/purser-core/utils';
+import { messageOrDataValidator } from '@vutr/purser-core/helpers';
 
-import { signMessage } from '@colony/purser-trezor/staticMethods';
-import { payloadListener } from '@colony/purser-trezor/helpers';
+import { signMessage } from '@vutr/purser-trezor/staticMethods';
+import { payloadListener } from '@vutr/purser-trezor/helpers';
 
-import { PAYLOAD_SIGNMSG } from '@colony/purser-trezor/payloads';
-import { STD_ERRORS } from '@colony/purser-trezor/defaults';
+import { PAYLOAD_SIGNMSG } from '@vutr/purser-trezor/payloads';
+import { STD_ERRORS } from '@vutr/purser-trezor/defaults';
 
-jest.dontMock('@colony/purser-trezor/staticMethods');
+jest.dontMock('@vutr/purser-trezor/staticMethods');
 
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-core/validators');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers'),
 );
-jest.mock('@colony/purser-trezor/helpers', () =>
+jest.mock('@vutr/purser-trezor/helpers', () =>
   require('@mocks/purser-trezor/helpers'),
 );
 

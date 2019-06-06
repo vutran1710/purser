@@ -1,26 +1,24 @@
 import { Wallet as EthersWalletClass } from 'ethers/wallet';
 
-import { getRandomValues, warning } from '@colony/purser-core/utils';
-import { userInputValidator } from '@colony/purser-core/helpers';
+import { getRandomValues, warning } from '@vutr/purser-core/utils';
+import { userInputValidator } from '@vutr/purser-core/helpers';
 
-import SoftwareWalletClass from '@colony/purser-software/class';
-import softwareWallet from '@colony/purser-software';
+import SoftwareWalletClass from '@vutr/purser-software/class';
+import softwareWallet from '@vutr/purser-software';
 
-jest.dontMock('@colony/purser-software/index');
+jest.dontMock('@vutr/purser-software/index');
 
 jest.mock('ethers/wallet');
-jest.mock('@colony/purser-software/class');
+jest.mock('@vutr/purser-software/class');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
 
 /*
  * These values are not correct. Do not use the as reference.

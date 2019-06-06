@@ -69,7 +69,7 @@ _**Note:** For the [Metamask Wallet](/purser/modules-@colonypurser-metamask/) th
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-software';
+import { open } from '@vutr/purser-software';
 
 const wallet = await open({ privateKey: `0x9274...f447` });
 
@@ -89,7 +89,7 @@ _**Note:** For the [Metamask Wallet](/purser/modules-@colonypurser-metamask/) th
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-ledger';
+import { open } from '@vutr/purser-ledger';
 
 const wallet = await open({ chainId: 3 });
 
@@ -115,7 +115,7 @@ If you need more information about the encrypted `keystore`, you can check out t
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-software';
+import { open } from '@vutr/purser-software';
 
 const wallet = await open({ privateKey: `0x9274...f447` });
 
@@ -139,7 +139,7 @@ If a _new_ wallet was instantiated, or a new instance was created via a `mnemoni
 
 **Usage:**
 ```js
-import { create } from '@colony/purser-software';
+import { create } from '@vutr/purser-software';
 
 const wallet = await create();
 
@@ -159,14 +159,14 @@ On a hardware wallet, this is read-only, and is used to derive all the address i
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-software';
+import { open } from '@vutr/purser-software';
 
 const wallet = await open({ mnemonic: 'load blush ... sheriff surge' });
 
 console.log(await wallet.derivationPath); // m/44'/60'/0'/0/0
 ```
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const wallet = await open();
 
@@ -192,7 +192,7 @@ Note, that if only one address was derived when you opened the wallet _(Eg: `{ a
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const multipleAddresesWallet = await open();
 
@@ -201,7 +201,7 @@ console.log(wallet.otherAddress); // [0x56B4...8173, 0x0F91...d9A8, 0x26eB...bAD
 console.log(wallet.otherAddress.length); // 10
 ```
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const multipleAddresesWallet = await open({ addressCount: 1 });
 
@@ -219,7 +219,7 @@ _**Warning:** As the name suggests, this is private. So treat it with caution an
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-software';
+import { open } from '@vutr/purser-software';
 
 const wallet = await open({ mnemonic: 'load blush ... sheriff surge' });
 
@@ -239,7 +239,7 @@ _**Note:** The [Metamask Wallet](/purser/modules-@colonypurser-metamask/) does n
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const wallet = await open();
 
@@ -255,7 +255,7 @@ This is just a simple string value that represents the main type for the instant
 
 **Usage:**
 ```js
-import { create } from '@colony/purser-software';
+import { create } from '@vutr/purser-software';
 
 const wallet = await create();
 
@@ -271,7 +271,7 @@ This is just a simple string value that represents the sub type for _(wallet typ
 
 **Usage:**
 ```js
-import { create } from '@colony/purser-software';
+import { create } from '@vutr/purser-software';
 
 const wallet = await create();
 
@@ -295,7 +295,7 @@ If setting the address value is successful, it will return `true`, otherwise it 
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const multipleAddresesWallet = await open();
 
@@ -342,15 +342,15 @@ _**Note**: While all other wallet types allow you to pass in an empty `inputData
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-software';
+import { open } from '@vutr/purser-software';
 
 const softwareWallet = await open({ mnemonic: 'load blush ... sheriff surge' });
 
 const transactionSignature = await softwareWallet.sign({ to: '0x3953...a4C1' }); // 0xF990...8d91
 ```
 ```js
-import { open } from '@colony/purser-ledger';
-import { bigNumber } from '@colony/purser-core/utils';
+import { open } from '@vutr/purser-ledger';
+import { bigNumber } from '@vutr/purser-core/utils';
 
 const ledgerWallet = await open();
 
@@ -368,8 +368,8 @@ const transactionSignature = await ledgerWallet.sign(transaction); // 0xf849...5
 ```
 Deploy a contract:
 ```js
-import { open } from '@colony/purser-trezor';
-import { bigNumber } from '@colony/purser-core/utils';
+import { open } from '@vutr/purser-trezor';
+import { bigNumber } from '@vutr/purser-core/utils';
 
 const trezorWallet = await open();
 
@@ -404,7 +404,7 @@ messageObject {
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const trezorWallet = await open();
 
@@ -437,7 +437,7 @@ messageObject {
 
 **Usage:**
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const trezorWallet = await open();
 

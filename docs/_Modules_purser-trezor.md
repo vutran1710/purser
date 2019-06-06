@@ -1,5 +1,5 @@
 ---
-title: '@colony/purser-trezor'
+title: '@vutr/purser-trezor'
 section: Modules
 order: 4
 ---
@@ -38,16 +38,16 @@ There are different ways in which you can import the library in your project _(a
 
 Using `ES5` `require()` statements:
 ```js
-var trezor = require('@colony/purser-trezor'); // trezor.open().then();
+var trezor = require('@vutr/purser-trezor'); // trezor.open().then();
 
-var open = require('@colony/purser-trezor').open; // open().then();
+var open = require('@vutr/purser-trezor').open; // open().then();
 ```
 
 Using `ES6` `import` statements:
 ```js
-import trezor from '@colony/purser-trezor'; // await trezor.open();
+import trezor from '@vutr/purser-trezor'; // await trezor.open();
 
-import { open } from '@colony/purser-trezor'; // await open();
+import { open } from '@vutr/purser-trezor'; // await open();
 ```
 
 ## Methods
@@ -90,14 +90,14 @@ Defaults to `id` `1`: `homestead`.
 
 Open the trezor wallet using the default number of addresses:
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const wallet = await open();
 ```
 
 Open the trezor wallet using a custom number of addresses:
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const wallet = await open({ addressCount: 100 });
 
@@ -108,7 +108,7 @@ await wallet.setDefaultAddress(12); //true
 
 Open the trezor wallet using a different chain id:
 ```js
-import { open } from '@colony/purser-trezor';
+import { open } from '@vutr/purser-trezor';
 
 const wallet = await open({ chainId: 3 }); // ropsten
 

@@ -1,8 +1,8 @@
 import crypto from 'crypto';
 
-import { getRandomValues } from '@colony/purser-core/utils';
+import { getRandomValues } from '@vutr/purser-core/utils';
 
-jest.dontMock('@colony/purser-core/utils');
+jest.dontMock('@vutr/purser-core/utils');
 
 jest.mock('crypto', () => ({}));
 

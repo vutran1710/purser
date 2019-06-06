@@ -4,7 +4,7 @@ const path = require('path');
  * Paths
  */
 
-const MODULES = path.resolve('.', 'modules', 'node_modules', '@colony');
+const MODULES = path.resolve('.', 'modules', 'node_modules', '@vutr');
 
 const FOLDERS = {
   SOURCE: 'src',

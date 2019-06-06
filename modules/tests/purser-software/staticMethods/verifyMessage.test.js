@@ -1,23 +1,23 @@
 import { verifyMessage as verifyEthersMessage } from 'ethers/utils';
 
-import { messageVerificationObjectValidator } from '@colony/purser-core/helpers';
-import { addressValidator } from '@colony/purser-core/validators';
+import { messageVerificationObjectValidator } from '@vutr/purser-core/helpers';
+import { addressValidator } from '@vutr/purser-core/validators';
 
-import { verifyMessage } from '@colony/purser-software/staticMethods';
+import { verifyMessage } from '@vutr/purser-software/staticMethods';
 
-jest.dontMock('@colony/purser-software/staticMethods');
+jest.dontMock('@vutr/purser-software/staticMethods');
 
 jest.mock('ethers/utils');
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-core/validators');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers'),
 );
 

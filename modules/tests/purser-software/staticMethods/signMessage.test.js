@@ -1,26 +1,24 @@
-import { hexSequenceNormalizer } from '@colony/purser-core/normalizers';
-import { messageValidator } from '@colony/purser-core/validators';
+import { hexSequenceNormalizer } from '@vutr/purser-core/normalizers';
+import { messageValidator } from '@vutr/purser-core/validators';
 
-import { signMessage } from '@colony/purser-software/staticMethods';
-import { messageOrDataValidator } from '@colony/purser-core/helpers';
+import { signMessage } from '@vutr/purser-software/staticMethods';
+import { messageOrDataValidator } from '@vutr/purser-core/helpers';
 
-jest.dontMock('@colony/purser-software/staticMethods');
+jest.dontMock('@vutr/purser-software/staticMethods');
 
-jest.mock('@colony/purser-core/validators');
+jest.mock('@vutr/purser-core/validators');
 /*
  * @TODO Fix manual mocks
  * This is needed since Jest won't see our manual mocks (because of our custom monorepo structure)
  * and will replace them with automatic ones
  */
-jest.mock('@colony/purser-core/helpers', () =>
+jest.mock('@vutr/purser-core/helpers', () =>
   require('@mocks/purser-core/helpers'),
 );
-jest.mock('@colony/purser-core/normalizers', () =>
+jest.mock('@vutr/purser-core/normalizers', () =>
   require('@mocks/purser-core/normalizers'),
 );
-jest.mock('@colony/purser-core/utils', () =>
-  require('@mocks/purser-core/utils'),
-);
+jest.mock('@vutr/purser-core/utils', () => require('@mocks/purser-core/utils'));
 
 /*
  * These values are not correct. Do not use the as reference.
