@@ -12,7 +12,7 @@ const corePackageFile = require(path.resolve(MODULES, 'purser-core', FILES.PACKA
 
 const PACKAGES = {
   BABEL_RUNTIME: '@babel/runtime',
-  CORE: '@colony/purser-core',
+  CORE: '@vutr/purser-core',
   ETHERS: 'ethers',
 };
 
